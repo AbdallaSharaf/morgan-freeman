@@ -26,14 +26,16 @@ const Services = () => {
         </h1>
         <div className='bg-blue-500 h-1 my-4 w-12'></div>
         <p className='mx-4 text-gray-700 text-center'>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-12 mx-28 gap-6'>
-            {SERVICES.map((item)=>{
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-12 mx-8 md:mx-28 gap-6'>
+            {SERVICES.map((item, id)=>{
                 return (
-                    <Link to='#' 
+                    <Link 
+                    key={id}
+                    to='#' 
                     onClick={() => handleLinkClick(item)}
                     className='group'>
                     <div className='bg-blue-500 rounded-2xl shadow-[15px_15px_15px_15px_rgba(0,0,0,0.05)]'>
-                    <div className='py-20 px-8 flex flex-col max-h-80 bg-white items-start justify-start rounded-2xl group-hover:-translate-y-[6px] transition-all duration-300 ease-in-out'>
+                    <div className='py-20 px-8 flex flex-col max-h-80  bg-white items-start justify-start rounded-2xl group-hover:-translate-y-[6px] transition-all duration-300 ease-in-out'>
                         <FontAwesomeIcon icon={item.icon} className='p-4 w-8 h-8 text-white rounded-full bg-blue-500'/>
                         <h2 className='text-xl font-bold my-4 group-hover:text-blue-500 transition-all duration-300 ease-in-out'>{item.title}</h2>
                         <p className='text-sm'>{item.text}</p>
