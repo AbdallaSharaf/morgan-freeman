@@ -80,7 +80,7 @@ const Portfolio = () => {
   const selectedImage = currentImages[selectedImageIndex]; // Get the current image based on index
 
   return (
-    <div id="portfolio" className='flex flex-col items-center justify-center mt-16 scroll-m-24'>
+    <div id="portfolio" className='flex flex-col items-center justify-center my-16 scroll-m-24'>
         <h1 className='text-4xl font-semibold'>
             Portfolio
         </h1>

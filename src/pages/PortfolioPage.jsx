@@ -3,11 +3,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
-import { PrevArrow, NextArrow } from './CustomArrow';
+import { PrevArrow, NextArrow } from '../components/CustomArrow';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import testimonialImg from '../assets/images/testimonials/testimonials-2.jpg'
 import { motion } from "framer-motion";
+import Button from "../components/Button";
+
 
 const allImages = import.meta.glob('../assets/images/portfolio/*.{jpg,png}', { eager: true });
 const images = []
@@ -16,6 +18,13 @@ Object.keys(allImages).forEach((path) => {
     const imageUrl = allImages[path].default;
     images.push(imageUrl)
 });
+
+const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
 
 export default function PortfolioPage() {
     const settings = {
@@ -102,9 +111,9 @@ export default function PortfolioPage() {
             </div>
             <div className="my-1">
                 <p className="text-gray-500 text-opacity-50 uppercase">Project URL</p>
-                <p><Link to='https://bootstrapmade.com/content/demo/DevFolio/portfolio-details'>www.example.com</Link></p>
+                <p className="text-blue-600" onClick={scrollToTop}><Link to='/portfolio'>www.example.com</Link></p>
             </div>
-            <button className="mt-5"><Link to='https://bootstrapmade.com/content/demo/DevFolio/portfolio-details' className="px-10 text-white bg-blue-500 opacity-100 py-2 rounded-full hover:opacity-80 transition-all duration-300 ease-in-out">Visit Website</Link></button>
+            <Button className="mt-5" onClick={scrollToTop}><Link to='/portfolio'>Visit Website</Link></Button>
         </div>
     </div>
     </motion.div>

@@ -134,7 +134,7 @@ export default function Navbar() {
       <div className="items-center relative mx-auto w-full">
         <div className="flex items-center justify-between mx-auto px-6 py-2 lg:px-28">
           <div className="flex justify-center sm:justify-between flex-shrink-0 items-center">
-            <Link to="#" onClick={() => handleLinkClick(navigation[0])}>
+            <Link to='/#home' onClick={() => handleLinkClick(navigation[0])}>
               <h1 className="text-white text-3xl font-bold">DevFolio</h1>
             </Link>
           </div>

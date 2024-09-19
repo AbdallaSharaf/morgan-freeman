@@ -1,10 +1,12 @@
 import React, { useRef, useEffect } from 'react'
-import Hero from './components/Hero'
+import Hero from '../components/Hero'
 import {motion} from 'framer-motion'
-import About from './components/About'
-import Resume from './components/Resume'
-import Services from './components/Services'
-import Portfolio from './components/Portfolio'
+import About from '../components/About'
+import Resume from '../components/Resume'
+import Services from '../components/Services'
+import Portfolio from '../components/Portfolio'
+import Pricing from '../components/Pricing'
+import ContactMe from '../components/ContactMe'
 
 
 const App = () => {
@@ -54,7 +56,20 @@ const App = () => {
         transition={{duration:0.5 , delay:0.25}}>
           <Portfolio />
         </motion.div>
-        
+        <motion.div
+        initial={{ opacity: 0, y:100}}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{duration:0.5 , delay:0.25}}>
+          <Pricing />
+        </motion.div>
+        <motion.div
+        initial={{ opacity: 0, y:100}}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{duration:0.5 , delay:0.25}}>
+          <ContactMe />
+        </motion.div>
     </>
   )
 }
